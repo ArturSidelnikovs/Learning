@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--    <bean id="testBean" class="org.example.annotationsConfigExample.TestBeanXmlAnnotaited">-->
+<!--        <constructor-arg value="ALex"/>-->
+<!--    </bean>-->
+
+    <bean id="musicBean"
+          class="org.example.xmlConfigExample.ClassicalMusic"
+          factory-method="getClassicalMusic"/>
+
+<!--          scope="prototype" -->
+<!--          init-method="doMyInit"-->
+<!--          destroy-method="doMyDestroy"-->
+
+<!--TODO Values through the string "constructor-arg" are substituted into the constructor -->
+    <bean id ="playerBean" class="org.example.xmlConfigExample.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
+
+
+<!--       <bean id ="playerBean2" class="org.example.xmlConfigExample.MusicPlayer">-->
+
+
+<!--       TODO Значения присваиваются через метод Setter с помощью ссылки &ndash;&gt;-->
+<!--       <property name="music" ref="musicBean"/>-->
+
+<!--       TODO Значения присваиваются через метод Setter с помощью значений &ndash;&gt;-->
+<!--       <property name="name" value="Some name of Song"/>&ndash;&gt;-->
+<!--       <property name="volume" value="50"/>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;TODO Значения присваиваются через Property file с помощью express language &ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
+
+<!--    <context:property-placeholder location="musicPlayer.properties"/>-->
+
+</beans>
